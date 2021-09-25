@@ -8,7 +8,7 @@
 
 body {
   text-align: center;
-  background: url('https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80')
+  background: url('https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2072&q=80')
     no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -56,4 +56,41 @@ input[type='submit']:hover {
 input[type='submit']:active {
   transform: translateY(2px);
   box-shadow: 0px 1px 5px 0px #808080;
+}
+
+.lorem-para {
+  width: 50%;
+  margin: 2rem auto;
+  font-size: 1.05rem;
+}
+
+button {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #000000;
+  color: #fff;
+  letter-spacing: 1px;
+  box-shadow: 0px 3px 7px 1px #808080;
+}
+
+button:hover {
+  background-color: whitesmoke;
+  color: #000000;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 1px 5px 0px #808080;
+}
+
+.selection {
+  margin-top: 2rem;
+}
+
+.selection label {
+  margin-right: 1rem;
+  font-size: 1.25rem;
 }

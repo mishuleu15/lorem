@@ -5,15 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Lorem</title>
   </head>
   <body>
     <h1>LOREM IPSUM GENERATOR</h1>
-    <form action="">
-      <label for="lorem">Paragraphs:</label>
-      <input type="text" id="lorem" />
-      <input type="submit" value="GENERATE" />
+    <button>RESET</button>
+    <form>
+      <label for="lorem">How many:</label>
+      <input name="searchTxt" type="text" id="lorem" />
+      <input type="submit" value="GENERATE" id="button" />
+      <div class="selection">
+        <input
+          type="radio"
+          id="paragraph"
+          name="fav_lorem"
+          value="paragraphs"
+        />
+        <label for="paragraph">paragraphs</label>
+        <input type="radio" id="words" name="fav_lorem" value="words" />
+        <label for="words">words</label>
+        <input type="radio" id="bytes" name="fav_lorem" value="bytes" />
+        <label for="bytes">bytes</label>
+        <input type="checkbox" id="startLorem" value="startLorem" />
+        <label for="startLorem"
+          >Start with 'Lorem ipsum dolor sit amet...'</label
+        >
+      </div>
     </form>
+
+    <div class="lorem-para"></div>
   </body>
 </html>
