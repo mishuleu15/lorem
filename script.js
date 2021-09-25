@@ -25,15 +25,9 @@ let arr = [];
 
 let checked = false;
 
-function addLoremPara() {
+function addPara() {
   for (let i = 0; i < input.value; i++) {
-    let randomNumber = Math.floor(Math.random() * lorem.length);
-    if (checked) {
-      arr.push(lorem[lorem.length - 1]);
-      checked = false;
-    } else {
-      arr.push(lorem[randomNumber]);
-    }
+    generateLorem();
     const para = document.createElement('p');
     para.textContent = arr[i];
     para.style.marginBottom = '2rem';
@@ -42,37 +36,12 @@ function addLoremPara() {
   btn.setAttribute('disabled', 'disabled');
 }
 
-function addLoremBytes() {
-  const arrBytes = [];
-  const para = document.createElement('p');
-  for (let i = 0; i < input.value; i++) {
-    let randomNumber = Math.floor(Math.random() * lorem.length);
-    if (checked) {
-      arr.push(lorem[lorem.length - 1]);
-      checked = false;
-    } else {
-      arr.push(lorem[randomNumber]);
-    }
-
-    arrBytes.push(arr[0][i]);
-  }
-  para.textContent = arrBytes.join('');
-  loremPara.appendChild(para);
-  btn.setAttribute('disabled', 'disabled');
-}
-
-function addLoremWords() {
+function addWords() {
   const arrBytes = [];
   const newArr = [];
   const para = document.createElement('p');
   for (let i = 0; i < input.value; i++) {
-    let randomNumber = Math.floor(Math.random() * lorem.length);
-    if (checked) {
-      arr.push(lorem[lorem.length - 1]);
-      checked = false;
-    } else {
-      arr.push(lorem[randomNumber]);
-    }
+    generateLorem();
 
     arrBytes.push(arr[i]);
     newArr.push(arrBytes.join().split(' ')[i]);
@@ -83,6 +52,29 @@ function addLoremWords() {
   btn.setAttribute('disabled', 'disabled');
 }
 
+function addBytes() {
+  const arrBytes = [];
+  const para = document.createElement('p');
+  for (let i = 0; i < input.value; i++) {
+    generateLorem();
+
+    arrBytes.push(arr[0][i]);
+  }
+  para.textContent = arrBytes.join('');
+  loremPara.appendChild(para);
+  btn.setAttribute('disabled', 'disabled');
+}
+
+function generateLorem() {
+  let randomNumber = Math.floor(Math.random() * lorem.length);
+  if (checked) {
+    arr.push(lorem[lorem.length - 1]);
+    checked = false;
+  } else {
+    arr.push(lorem[randomNumber]);
+  }
+}
+
 function resetLorem() {
   location.reload();
   btn.removeAttribute('disabled', 'enabled');
@@ -91,11 +83,11 @@ function resetLorem() {
 btn.addEventListener('click', (e) => {
   e.preventDefault();
   if (selectParagraphs.checked) {
-    addLoremPara();
+    addPara();
   } else if (selectBytes.checked) {
-    addLoremBytes();
+    addBytes();
   } else if (selectWords.checked) {
-    addLoremWords();
+    addWords();
   }
 });
 
