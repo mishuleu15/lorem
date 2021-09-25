@@ -108,7 +108,7 @@ button:active {
   .lorem-para {
     width: 75%;
     text-align: justify;
-  
+  }
 }
 
 @media screen and (max-width: 876px) {
@@ -136,7 +136,7 @@ button:active {
   .lorem-para {
     width: 95%;
     text-align: justify;
-  
+  }
 }
 @media screen and (max-width: 600px) {
   h1 {
