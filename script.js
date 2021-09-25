@@ -15,6 +15,7 @@ const lorem = [
 const input = document.querySelector("[name='searchTxt']");
 const loremPara = document.querySelector('.lorem-para');
 const btn = document.querySelector('#button');
+const form = document.querySelector('form');
 const button = document.querySelector('button');
 const selectLorem = document.querySelector('input[value=startLorem]');
 const selectParagraphs = document.querySelector('input[value=paragraphs]');
@@ -80,14 +81,20 @@ function resetLorem() {
   btn.removeAttribute('disabled', 'enabled');
 }
 
-btn.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
+  const value = parseInt(input.value);
   if (selectParagraphs.checked) {
     addPara();
   } else if (selectBytes.checked) {
     addBytes();
   } else if (selectWords.checked) {
     addWords();
+  }
+
+  if (isNaN(value) || value < 0) {
+    let randomNumber = Math.floor(Math.random() * lorem.length);
+    loremPara.innerHTML = lorem[randomNumber];
   }
 });
 
